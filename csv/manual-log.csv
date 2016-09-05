@@ -1,0 +1,109 @@
+Terminal,St. entrance,St. entry time,Vehicle type,Vehicle label,Vehicle dep. time,Vehicle boarding stop,Vehicle stop time,Vehicle exit stop,St. exit location,St. exit time,Comments:
+1,,09:02,Bus,154,09:07,Niittyrinne,09:23,Ruoholahti (Länsiväylä),,,
+1,Ruoholahti A,09:25,Metro,V,09:31,Ruoholahti(M),09:35,Helsingin Yliopisto(M),HY B (Vilhonkatu),09:38,
+1,,,Tram,3,09:41,Kaisaniemenpuisto,09:44,Hakaniemi,,,
+1,Hakaniemi D (Ratikat),09:45,Metro,,09:48,Hakaniemi(M),09:51,Rautatientori,Rautatientori A (Asema-aukio),09:54,
+1,,,Train,E,09:57,Rautatieasema,10:01,Pasila,Pasilan silta,10:03,
+1,,,Tram,7A,10:06,Pasilan asema (Ratapihantie),10:19,Sörnäinen,,,
+1,Sörnäinen E,10:22,Metro,,10:28,Sörnäinen(M),10:35,Siilitie(M),,10:37,
+1,Siilitie,10:41,Metro,V,10:46,Siilitie(M),10:52,Rastila(M),Rikisilta,10:53,
+1,Rastila,10:58,Metro,,11:01,Rastila(M),11:06,Itäkeskus(M),,,Transfer
+1,,,Metro,M,11:15,Itäkeskus(M),11:19,Kontula(M),Emännänpolku,11:20,
+1,Emännänpolku,10:39,Metro,M,11:47,Kontula(M),11:45,Mellunmäki(M),Mellunmäki B (Korvatunturintie),11:45,
+1,Mellunmäki B (Korvatunturintie),11:53,Metro,,11:56,Mellunmäki(M),12:01,Itäkeskus(M),Itäkeskus C (Tallinnanaukio),12:02,
+1,Itäkeskus C (Tallinnanaukio),13:13,Metro,,13:14,Itäkeskus(M),13:30,Kamppi(M),"Kamppi C, (Freda)",13:34,
+1,,,Tram,9,13:43,Kampintori,13:52,Kaisaniemenkatu,,,
+1,HY A ,13:53,Metro,,13:58,Helsingin Yliopisto(M),14:04,Kulosaari(M),,14:06,
+1,,14:16,Metro,,14:18,Kulosaari(M),14:30,Vuosaari(M),,14:31,
+1,,14:37,Metro,,14:38,Vuosaari(M),14:51,Herttoniemi(M),Herttoniemi A,14:52,
+1,Herttoniemi A,14:54,Metro,,14:57,Herttoniemi(M),15:05,Kontula(M),Kontulankaari,15:06,
+1,Kontulankaari,15:22,Metro,,15:24,Kontula(M),15:26,Myllypuro(M),Myllypuro A,15:28,
+1,Myllypuro A,15:32,Metro,,15:36,Myllypuro(M),15:55,Kamppi(M),,,
+1,,,Bus,156,15:59,Kamppi,16:20,Niittyrinne,,,
+2,,,Bus,103T,10:38,E2226 Alvar Aallon puisto,10:54,1014 Länsiväylä,,,
+2,,10:59,Metro,To east,11:04,Ruoholahti(M),11:06,Rautatientori,,11:08,St.entry and vehicle dep.time are estimates
+2,,11:24,Metro,To east,11:26,Rautatientori,11:50,Vuosaari(M),,,"Vehicle stop time is estimate, I never exited station but boarded metro to opposite direction"
+2,,,Metro,To west,11:50,Vuosaari(M),11:58,Itäkeskus(M),,12:00,I never entered station but boarded from another metro
+2,,13:13,Metro,To west,13:14,Itäkeskus(M),13:30,Kamppi(M),,,
+2,,,Bus,103T,13:34,"1242 Kamppi (Espoon terminaali), Laituri 42",13:55,E2229 Alvar Aallon puisto ,,,
+2,,,Car,,14:46,"Konemiehentie 2, Espoo",15:17,"Tahkotie 1, 01530 Vantaa",,,I didn't log any details about car trip
+2,,,Car,,15:21,"Tahkotie 1, 01530 Vantaa",15:31,Vantaankoski train station,,,I didn't log any details about car trip
+2,,,Train,I,15:39,Vantaankoski,15:51,Huopalahti,,,"I actually didn't exit at Huopalahti but marked it as an exit when at that station (did it because Helsinki exit, my true destination, would have been after 16:00)"
+3,Sepetlahdentie,09:01,Car,,09:01,Sepetlahdentie,09:13,Konemiehentie 2,Konemiehentie 2,09:13,
+3,E2226 Alvar Aallon puisto,09:54,Bus,132T,09:59,E2226 Alvar Aallon puisto,10:13,1014 Länsiväylä,1014 Länsiväylä,10:13,
+3,Ruoholahti A,10:16,Metro,To east,10:21,Ruoholahti(M),10:23,Kamppi (M),Kamppi C metro north,10:26,
+3,Narinkka Forum glass box,10:32,Metro,To east,10:37,Rautatientori (M),10:47,Herttoniemi(M),Herttoniemi C west,10:50,
+3,Herttoniemi C west,10:57,Metro,To east,10:59,Herttoniemi(M),11:10,Vuosaari(M),Vuosaari A Valkopaadentie,11:12,
+3,Vuosaari A Valkopaadentie,11:26,Metro,To west,11:27,Vuosaari(M),11:34,Puotila (M),Puotila A metrotori,11:35,
+3,Puotila B,11:42,Metro,To west,11:56,Puotila(M),11:58,Itäkeskus(M),Itäkeskus C Tallinnanaukio,12:00,
+3,Itäkeskus C Tallinnanaukio,13:13,Metro,To west,13:14,Itäkeskus(M),13:24,Sörnäinen(M),Sörnäinen C Hämeentie ,13:27,
+3,0314 Sörnäinen,13:28,Tram,7A,13:35,0314 Sörnäinen,13:41,0308 Hakaniemi,0308 Hakaniemi,13:41,
+3,Hakaniemi D,13:42,Metro,To west,13:45,Hakaniemi(M),13:47,Helsingin Yliopisto(M),Helsingin yliopisto E Kaisaniemenkatu,13:50,
+3,Rautatieasema Asematunneli Rautatientori side,13:57,Metro,To west,14:07,Rautatientori (M),14:09,Kamppi(M),,,Transfer to next train to Ruoholahti as this line ended in Kamppi.
+3,Kamppi(M),14:09,Metro,To west,14:11,Kamppi(M),14:13,Ruoholahti(M),Ruoholahti A Itämerenkatu ,14:16,
+3,Länsiväylä 1014,14:19,Bus,105,14:21,Länsiväylä 1014,14:24,Kamppi bus terminal,Kamppi,,Did not leave bus terminal level in Kamppi
+3,Kamppi shopping centre metro elevator,14:40,Metro,To east,14:42,Kamppi(M),14:52,Kulosaari(M),Kulosaari,14:54,
+3,Kulosaari,15:00,Metro,To west,15:02,Kulosaari(M),15:13,Ruoholahti(M),Ruoholahti A Itämerenkatu ,15:16,
+3,H1013 Länsiväylä ,15:21,Bus,102T,15:26,H1013 Länsiväylä ,15:43,E2229 Alvar Aallon puisto ,,,
+4,,,Tram,9,09:39,Ruoholahden villat 0822,09:45,rautatieasema 0301,,,
+4,,,Train,K,09:56,Helsinki,10:04,Oulunkylä,,,Boarded from Helsinki train station laituri 1-3
+4,,,Train,K,10:07,Oulunkylä,10:10,pasila,,,This train was one of those older inter-city trains! 
+4,,,Tram,7A,10:17,Pasila 0611,10:28,Sörnäinen 0314,,,
+4,entrance in the middle of Hämeentie street where tram rail is,10:30,Metro,to east (to Mellunmäki),10:35,Sörnäinen,10:37,kalasatama,Lautarjankatu,10:40,Entered Sörnäinen metro station from the entrance located in the middle of Hämeentie street (it opens to tram stops)
+4,Hermannin rantatie,10:43,Metro,to east (to Vuosaari),10:47,kalasatama,10:53,siilitie,siilitie 1 (exit beside rkioski),10:56,
+4,from elevator,11:02,Metro,to east (to Mellunmäki),11:04,siilitie,11:13,Mellunmäki,korvatunturinpolku. Rkioski side,11:16,elevator entrance is below the metro bridge
+4,korvatunturinpolku (Rkioski side),11:24,Metro,to west,11:26,Mellunmäki,11:28,kontula,emännänpolku (rkioski),11:30,
+4,emännänpolku (rkioski),11:35,Metro,to east,11:36,Kontula,11:38,Myllypuro,no exit!,,No Exit! Wait for the next metro to east
+4,,,Metro,to east,11:45,Myllypuro,11:47,Itäkeskus,C (Tallinanaukio),11:49,"After exiting Itäkeskus metro station: Entered Itis building from D entrance. 
+Walking inside Itis, first down to parking lot, looking for Thai Orchid. Then back to ground floor... 
+Lunch at Thai Orchid .....
+Exit Itis at 13:13 from door next to Thai Orchid. 
+Enter Itäkeskus metro station at 13:16 from D entrace (Tallinanaukio). 
+Exit metro station at 13:18 from same (D)!"
+4,C,13:18,Metro,to west,13:21,Itäkeskus,13:31,Sörnäinen,A (Helsinginkatu ),13:35,
+4,G (front of Efes pub),13:38,Metro,to west,13:44,Sörnäinen,13:47,Helsingin yliopisto,next to Hauler oriental market,13:50,tricky exit !
+4,B (Vilhonkatu),13:53,Metro,to west,13:57,Helsingin yliopisto,14:01,Ruoholahti,A (Itämerenkuja),,
+4,,,Tram,9,14:28,Länsilinkki,14:31,kampintori,,,
+4,kamppi (in front of DNA and Rkioski),15:13,Metro,to east,15:15,kamppi,15:20,Sörnäinen,E (in front of picnic),15:23,
+4,F (in front of picnic),15:50,Metro,to west,15:53,Sörnäinen,15:55,Hakaniemi,B,15:57,
+5,,,Bus,110,09:08,E2403 Vanha-Mankkaa,09:13,E1319 Nihtisillanportti,,,
+5,,,Bus,18,09:16,E1319 Nihtisillanportti,09:19,Ka1733 Kaupungintalo,,,
+5,,,Train,U,09:29,Kauniainen,09:43,Pasila,Opastinsilta,09:46,
+5,,,Tram,7A,09:58,0613 Messukeskus,10:08,0314 Sörnäinen,,,
+5,C,10:09,Metro,M,10:12,Sörnäinen,10:13,Kalasatama,A,10:15,
+5,,,Bus,16,10:52,4029 Mustikkamaa,11:02,2557 Kalasatama,,,
+5,A,11:04,Metro,R,11:11,Kalasatama,11:14,Hakaniemi,E,11:16,
+5,,,Bus,67,11:18,2402 Hakaniemi,11:20,Rautatientori,,,
+5,L,11:23,Metro,R,11:30,Rautatientori,11:31,Kamppi,D,11:32,
+5,C,11:35,Metro,M,11:38,Kamppi,11:52,Itäkeskus,D,11:52,
+5,D,13:19,Metro,M,13:22,Itäkeskus,13:28,Mellunmäki,A,13:29,
+5,B,13:33,Metro,R,13:34,Mellunmäki,13:43,Siilitie,A,13:44,
+5,A,13:48,Metro,V,13:54,Siilitie,14:02,Vuosaari,A,14:04,
+5,A,14:16,Metro,R,14:20,Vuosaari,14:30,Herttoniemi,A,14:30,
+5,B,14:39,Metro,R,14:40,Herttoniemi,14:50,Rautatientori,Forum Simonkatu,14:59,
+5,,,Tram,9,15:10,0231 Simonkatu,15:20,H0200 Länsiterminaali,,,
+5,,,Tram,9,15:36,H0200 Länsiterminaali,15:39,0820 Länsilinkki,,,
+5,,,Tram,8e,15:51,0216 Itämerenkatu,15:52,0214 Ruoholahti,,,
+5,A,15:52,Metro,M,15:56,Ruoholahti,15:57,Kamppi,D,15:59,
+6,Kampin keskus Fredrikinkatu,11:33,Metro,,11:38,Kamppi,11:52,Itäkeskus,Itis Tallinnanaukio west,11:57,
+6,,13:18,Bus,95,13:26,4310 Itäkeskus 10,13:43,4482 Mellunmäki 12,,,
+6,west,13:44,Metro,,13:47,Mellunmäki,13:49,Kontula,Pedestrian bridge west,13:50,
+6,,13:57,Bus,560,14:01,H4405 Kontula,14:17,H4574 Vuosaari 14,,,
+6,Vuosaaren terminaalisilta vs Columbus,14:18,Metro,,14:19,Vuosaari,14:25,Itäkeskus,Tallinnanaukio eastern separate exit building,14:27,
+6,Itis Tallinnanaukio west,14:28,Metro,,14:29,Itäkeskus,14:30,Puotila,south,14:31,
+6,Karavaanisilta,14:59,Metro,,15:02,Rastila,15:20,Kamppi,Forum Kukontori,15:37,
+6,,15:40,Tram,2,15:41,0231 Simonkatu,15:43,H0233 Kamppi 74,,,
+6,,15:45,Tram,9,15:50,H0825 Kampintori 79,15:59,0200 Länsiterminaali 1,,,
+7,,,Car,,09:13,Leppävaara,09:30,Kumpula,,,
+7,,,Car,,15:00,Kumpula,15:15,"Käpylä, K market",,,"there was a road construction before, lengish stop"
+7,,,Car,,15:25,Käpylä,15:45,Leppävaara,,,
+8,Jämsänkatu 0661,10:15,Tram,9,10:18,Jämsänkatu 0661,10:23,Pasilan asema 0621,,,
+8,Pasila st.,10:29,Train,K,10:31,track 1,10:35,Railway st. track 1,Asematunneli,10:37,
+8,Railway st. 0301,10:44,Tram,9,10:44,Rautatieasema 0301,10:53,Hakaniemi 0251,,,
+8,Hakaniemi 2401,11:08,Bus,72,11:08,Hakaniemi 2401,11:13,Sörnäinen 2409,,,
+8,Sörnäinen (M),11:15,Metro,,11:25,Sörnäinen (M),11:41,Vuosaari (M),east side,11:43,
+8,Vuosaari (M),11:51,Metro,,11:52,Vuosaari (M),11:58,Itäkeskus (M),Tallinnanaukio,11:59,
+8,Itäkeskus 4322,13:47,Bus,550,13:49,Itäkeskus 4322,14:04,Oulunkylän asema 3167,,,
+8,Oulunkylä 0073,14:06,Train,I,14:09,Oulunkylä 0073,14:20,Tikkurila st. Track 3,,,
+8,Tikkurila st.,14:43,Train,I,14:49,Tikkurila st. Track 3,14:58,Lentoasema V0536,Airport terminal,15:02,
+8,Lentoasema V0531,15:06,Train,P,15:13,Lentoasema V0531,15:40,Railway st. track 1,,,
