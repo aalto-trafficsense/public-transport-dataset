@@ -48,27 +48,26 @@ As a result, sometimes the client may need up to ~200 seconds to wake up from SL
 ## terminal-models
 
 Lists the type string for the mobile phone used in the test. Included, as there are some differences in e.g. activity recognition performance between different devices. Contains the following columns:
-  1. Terminal (integer number of the terminal)
-  1. Model (string name of the model)
+  1. terminal (integer number of the terminal)
+  1. model (string name of the model)
 
 Table length: 8 rows.
 
 ## manual-log
 
 The manual bookkeeping of the test persons on the trips made. Contains the following columns per trip leg:
-  1. Terminal (integer number of the terminal)
-  1. St. entrance (string description of entrance to station building, if applicable)
-  1. St. entry time (time of entering station, if applicable)
-  1. Vehicle type (enum Metro / Bus / Tram / Train / Car)
-  1. Vehicle label (string identifier, e.g. 7A, 102T, U, V)
-  1. Vehicle dep. time (time of vehicle departure in trip start)
-  1. Vehicle boarding stop (string description of the platform or other station where vehicle was boarded)
-  1. Vehicle stop time (time of vehicle stop at trip end)
-  1. Vehicle exit stop (string description of the platform or other station where the vehicle was exited)
-  1. St. exit location (string description of exit to station building, if applicable)
-  1. St. exit time (time of exiting station, if applicable)
-  1. Comments (string freeform comments about the trip leg)
-
+  1. terminal (integer number of the terminal)
+  1. st-entrance (string description of entrance to station building, if applicable)
+  1. st-entry-time (time of entering station, if applicable)
+  1. vehicle-type (string Metro / Bus / Tram / Train / Car)
+  1. vehicle-label (string identifier, e.g. 7A, 102T, U, V)
+  1. vehicle-dep-time (time of vehicle departure in trip start)
+  1. vehicle-boarding-stop (string description of the platform or other station where vehicle was boarded)
+  1. vehicle-stop-time (time of vehicle stop at trip end)
+  1. vehicle-exit-stop (string description of the platform or other station where the vehicle was exited)
+  1. st-exit-location (string description of exit to station building, if applicable)
+  1. st-exit-time (time of exiting station, if applicable)
+  1. comments (string freeform comments about the trip leg)
 
 ## transit-live-samples
 
