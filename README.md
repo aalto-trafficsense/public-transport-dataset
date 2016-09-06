@@ -2,13 +2,13 @@
 This dataset is composed of position and activity recognition samples of 8 researchers between 9 am and 4 pm EET+DST on August 26th 2016 and related transport infrastructure data. Data collection for the limited period was pre-agreed with every campaign participant. The target was to create a dataset to be used for testing and benchmarking of algorithms for automatic recognition of public transportation trips from mobile phone sample data. Seven participants executed as many public transportation trips as possible during the designated time, especially emphasizing travel by subway, as it has been the most challenging transportation mode for automatic recognition. Some private car trips were also logged to provide comparison data, which should not match with any public transportation. Due to the exceptional amount of travel during one day, this dataset cannot be used as a source for studying regular travel habits of public transportation users.
 
 The dataset consists of the following components:
-* Terminal samples
+* Device data (samples from mobile terminals)
 * Terminal models
 * Manual log (supplemented by subway station maps)
 * Public transport fleet live position samples
 * Reference to static timetables
 
-## terminal-samples
+## device-data
 Mobile client samples were collected using the TrafficSense android client. The client program uses the fused location provider and activity recognition from Google play services. The following fields are collected into the dataset:
   1. terminal (integer, stable identifier for the device, used also for manual bookkeeping)
   1. time (timestamp without timezone)
