@@ -6,6 +6,7 @@ The dataset consists of the following components:
 * Terminal models
 * Manual log (supplemented by subway station maps)
 * Public transport fleet live position samples
+* Train history information
 * Reference to static timetables
 
 ## device-data
@@ -72,6 +73,16 @@ The manual bookkeeping of the test persons on the trips made. Contains the follo
 ## transit-live-samples
 
 Not included yet, license under clarification.
+
+## train history information
+
+Not in the repository yet, but planned to contain information fetched from:
+http://rata.digitraffic.fi/api/v1/history?departure_date=2016-08-26
+
+The returned JSON-file is a "junat" object, as described (in Finnish) at:
+http://rata.digitraffic.fi/api/v1/doc/index.html#Junavastaus
+
+The train data is licensed under the [Creative Commons BY 4.0 licence](http://creativecommons.org/licenses/by/4.0/) from [Digitraffic](http://www.liikennevirasto.fi/web/en/open-data/services/digitraffic#.V9BlOxB96Ho) offered by the [Finnish Traffic Agency](http://www.liikennevirasto.fi/web/en).
 
 ## static timetables
 
