@@ -82,6 +82,12 @@ http://rata.digitraffic.fi/api/v1/history?departure_date=2016-08-26
 The returned JSON-file is a "junat" object, as described (in Finnish) at:
 http://rata.digitraffic.fi/api/v1/doc/index.html#Junavastaus
 
+The train data references stations, which are obtained as:
+http://rata.digitraffic.fi/api/v1/metadata/stations
+
+The description of the stations "Liikennepaikat" format is available (in Finnish) at:
+http://rata.digitraffic.fi/api/v1/doc/index.html#Liikennepaikkavastaus
+
 The train data is licensed under the [Creative Commons BY 4.0 licence](http://creativecommons.org/licenses/by/4.0/) from [Digitraffic](http://www.liikennevirasto.fi/web/en/open-data/services/digitraffic#.V9BlOxB96Ho) offered by the [Finnish Traffic Agency](http://www.liikennevirasto.fi/web/en).
 
 ## static timetables
