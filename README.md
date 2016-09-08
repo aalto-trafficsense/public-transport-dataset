@@ -2,13 +2,14 @@
 This dataset is composed of position and activity recognition samples of 8 researchers between 9 am and 4 pm EET+DST on August 26th 2016 and related transport infrastructure data. Data collection for the limited period was pre-agreed with every campaign participant. The target was to create a dataset to be used for testing and benchmarking of algorithms for automatic recognition of public transportation trips from mobile phone sample data. Seven participants executed as many public transportation trips as possible during the designated time, especially emphasizing travel by subway, as it has been the most challenging transportation mode for automatic recognition. Some private car trips were also logged to provide comparison data, which should not match with any public transportation. Due to the exceptional amount of travel during one day, this dataset cannot be used as a source for studying regular travel habits of public transportation users.
 
 The dataset consists of the following components:
-* Terminal samples
+* Device data (samples from mobile terminals)
 * Terminal models
 * Manual log (supplemented by subway station maps)
 * Public transport fleet live position samples
+* Train history information
 * Reference to static timetables
 
-## terminal-samples
+## device-data
 Mobile client samples were collected using the TrafficSense android client. The client program uses the fused location provider and activity recognition from Google play services. The following fields are collected into the dataset:
   1. terminal (integer, stable identifier for the device, used also for manual bookkeeping)
   1. time (timestamp without timezone)
@@ -48,31 +49,40 @@ As a result, sometimes the client may need up to ~200 seconds to wake up from SL
 ## terminal-models
 
 Lists the type string for the mobile phone used in the test. Included, as there are some differences in e.g. activity recognition performance between different devices. Contains the following columns:
-  1. Terminal (integer number of the terminal)
-  1. Model (string name of the model)
+  1. terminal (integer number of the terminal)
+  1. model (string name of the model)
 
 Table length: 8 rows.
 
 ## manual-log
 
 The manual bookkeeping of the test persons on the trips made. Contains the following columns per trip leg:
-  1. Terminal (integer number of the terminal)
-  1. St. entrance (string description of entrance to station building, if applicable)
-  1. St. entry time (time of entering station, if applicable)
-  1. Vehicle type (enum Metro / Bus / Tram / Train / Car)
-  1. Vehicle label (string identifier, e.g. 7A, 102T, U, V)
-  1. Vehicle dep. time (time of vehicle departure in trip start)
-  1. Vehicle boarding stop (string description of the platform or other station where vehicle was boarded)
-  1. Vehicle stop time (time of vehicle stop at trip end)
-  1. Vehicle exit stop (string description of the platform or other station where the vehicle was exited)
-  1. St. exit location (string description of exit to station building, if applicable)
-  1. St. exit time (time of exiting station, if applicable)
-  1. Comments (string freeform comments about the trip leg)
-
+  1. terminal (integer number of the terminal)
+  1. st-entrance (string description of entrance to station building, if applicable)
+  1. st-entry-time (time of entering station, if applicable)
+  1. vehicle-type (string Metro / Bus / Tram / Train / Car)
+  1. vehicle-label (string identifier, e.g. 7A, 102T, U, V)
+  1. vehicle-dep-time (time of vehicle departure in trip start)
+  1. vehicle-boarding-stop (string description of the platform or other station where vehicle was boarded)
+  1. vehicle-stop-time (time of vehicle stop at trip end)
+  1. vehicle-exit-stop (string description of the platform or other station where the vehicle was exited)
+  1. st-exit-location (string description of exit to station building, if applicable)
+  1. st-exit-time (time of exiting station, if applicable)
+  1. comments (string freeform comments about the trip leg)
 
 ## transit-live-samples
 
 Not included yet, license under clarification.
+
+## train history information
+
+Not in the repository yet, but planned to contain information fetched from:
+http://rata.digitraffic.fi/api/v1/history?departure_date=2016-08-26
+
+The returned JSON-file is a "junat" object, as described (in Finnish) at:
+http://rata.digitraffic.fi/api/v1/doc/index.html#Junavastaus
+
+The train data is licensed under the [Creative Commons BY 4.0 licence](http://creativecommons.org/licenses/by/4.0/) from [Digitraffic](http://www.liikennevirasto.fi/web/en/open-data/services/digitraffic#.V9BlOxB96Ho) offered by the [Finnish Traffic Agency](http://www.liikennevirasto.fi/web/en).
 
 ## static timetables
 
