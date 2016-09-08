@@ -25,15 +25,16 @@ Done! To verify that the db was created correctly, start psql command
 line:
 1. `psql -U postgres`
 1. `postgres=# \dt` should printout the following:
-````                   List of relations
- Schema |         Name         | Type  |     Owner     
---------+----------------------+-------+---------------
- public | device_data          | table | regularroutes
- public | device_data_filtered | table | regularroutes
- public | device_models        | table | regularroutes
- public | manual_log           | table | regularroutes
- public | spatial_ref_sys      | table | postgres
- (5 rows)````
+
+        ```                   List of relations
+         Schema |         Name         | Type  |     Owner     
+        --------+----------------------+-------+---------------
+         public | device_data          | table | regularroutes
+         public | device_data_filtered | table | regularroutes
+         public | device_models        | table | regularroutes
+         public | manual_log           | table | regularroutes
+         public | spatial_ref_sys      | table | postgres
+         (5 rows)```
 
 
 
