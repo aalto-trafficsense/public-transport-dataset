@@ -26,7 +26,7 @@ line:
 1. `psql -U postgres`
 1. `postgres=# \dt` should printout the following:
 
-        ```                   List of relations
+                           List of relations
          Schema |         Name         | Type  |     Owner     
         --------+----------------------+-------+---------------
          public | device_data          | table | regularroutes
@@ -34,7 +34,7 @@ line:
          public | device_models        | table | regularroutes
          public | manual_log           | table | regularroutes
          public | spatial_ref_sys      | table | postgres
-         (5 rows)```
+         (5 rows)
 
 
 
