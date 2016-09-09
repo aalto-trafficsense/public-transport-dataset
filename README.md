@@ -21,7 +21,8 @@ from the manual log as possible by using the other forms of data available.
 
 The dataset consists of the following components:
 * [Device data](#device-data) (samples from mobile phones)
-* [Filtered device data](#device-data-filtered) (samples from mobile phones)
+* [Filtered device data](#device-data-filtered) (activity and movement
+  filtered)
 * [Device models](#device-models) (phones used by the participants)
 * [Manual log](#manual-log) (manual trip bookkeeping entries of participants)
 * [Live position samples](#transit-live) of the public transport fleet
