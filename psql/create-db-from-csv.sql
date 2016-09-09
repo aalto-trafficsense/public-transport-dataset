@@ -140,9 +140,9 @@ CREATE TABLE manual_log (
     line_type transit_type_enum,
     line_name character varying,
     vehicle_dep_time timestamp without time zone NOT NULL,
-    vehicle_boarding_stop character varying,
-    vehicle_stop_time timestamp without time zone NOT NULL,
-    vehicle_exit_stop character varying,
+    vehicle_dep_stop character varying,
+    vehicle_arr_time timestamp without time zone NOT NULL,
+    vehicle_arr_stop character varying,
     st_exit_location character varying,
     st_exit_time timestamp without time zone,
     comments character varying
@@ -151,3 +151,50 @@ CREATE TABLE manual_log (
 ALTER TABLE manual_log OWNER TO regularroutes;
 
 \COPY manual_log FROM '../csv/manual_log.csv' WITH CSV HEADER
+
+--
+-- transit_live
+--
+
+CREATE TEMPORARY TABLE transit_live_import (
+    "time" timestamp without time zone NOT NULL,
+    lat double precision NOT NULL,
+    lng double precision NOT NULL,
+    line_type transit_type_enum,
+    line_name character varying,
+    vehicle_ref character varying
+) ;
+
+\COPY transit_live_import FROM '../csv/transit_live.csv' WITH CSV HEADER
+
+CREATE TABLE transit_live (
+    id integer NOT NULL,
+    coordinate geography(Point,4326) NOT NULL,
+    "time" timestamp without time zone NOT NULL,
+    line_type transit_type_enum,
+    line_name character varying,
+    vehicle_ref character varying
+);
+
+ALTER TABLE transit_live OWNER TO regularroutes;
+
+CREATE SEQUENCE transit_live_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+ALTER TABLE transit_live_id_seq OWNER TO regularroutes;
+
+-- Create indices
+ALTER SEQUENCE transit_live_id_seq OWNED BY transit_live.id;
+ALTER TABLE ONLY transit_live ALTER COLUMN id SET DEFAULT nextval('transit_live_id_seq'::regclass);
+ALTER TABLE ONLY transit_live
+    ADD CONSTRAINT transit_live_pkey PRIMARY KEY (id);
+CREATE INDEX idx_transit_live_time_coordinate ON transit_live USING btree ("time", coordinate);
+CREATE INDEX idx_transit_live_time ON transit_live USING btree ("time");
+
+INSERT INTO transit_live (coordinate, "time", line_type, line_name, vehicle_ref)
+SELECT ST_SetSRID(ST_Point(lng, lat),4326) AS coordinate, "time", line_type, line_name, vehicle_ref
+FROM transit_live_import ;

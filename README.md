@@ -5,7 +5,8 @@ of 8 researchers between 9 am and 4 pm EET+DST on August 26th 2016,
 manual bookkeeping of their trips and related transport infrastructure data. Data collection for the limited period was pre-agreed with every campaign participant. The target was to create a dataset for testing and benchmarking of algorithms for automatic recognition of public transportation trips from mobile phone sample data. Seven participants executed as many public transportation trips as possible during the designated time, especially emphasizing travel by subway, as it has been the most challenging transportation mode for automatic recognition. Some private car trips were also logged to provide trips, which should not match with any public transportation. Due to the exceptional amount of travel during one day, this dataset cannot be used as a source for studying regular travel habits of public transportation users.
 
 The dataset consists of the following components:
-* [Device data](##device-data) (samples from mobile phones)
+* [Device data](#device-data) (samples from mobile phones)
+* [Filtered device data](#device-data-filtered) (samples from mobile phones)
 * Device models (phones used by the participants)
 * Manual log (manual trip bookkeeping entries of participants)
 * Public transport fleet live position samples
@@ -115,9 +116,24 @@ The manual bookkeeping of the test persons on the trips made. Contains the follo
 
 The table length is 103 rows.
 
-## transit-live-samples
+## transit-live
 
-Not included yet, license under clarification.
+A series of positions of the
+[Helsinki Regional Transport](https://www.hsl.fi/en) fleet obtained by
+sampling http://dev.hsl.fi/siriaccess/vm/json every 30 seconds,
+restricting the timeperiod to the time of the trial and geoboxing the area
+around the coordinates sampled from the test participants. 
+
+The following columns are included:
+  1. time (timestamp without timezone)
+  1. lat (double, latitude)
+  1. lng (double, longitude)
+  1. line_type (string SUBWAY / BUS / TRAM / TRAIN / CAR)
+  1. line_name (string identifier, e.g. 7A, 102T, U, V)
+  1. vehicle_ref (string to distinguish between different line_name
+     vehicles in traffic at the same time)
+
+The table length is 229451 entries.
 
 ## train history information
 
