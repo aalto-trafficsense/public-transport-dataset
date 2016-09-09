@@ -1,4 +1,4 @@
-device_id,st_entrance,st_entry_time,line_type,line_name,vehicle_dep_time,vehicle_boarding_stop,vehicle_stop_time, vehicle_exit_stop,st_exit_location,st_exit_time ,comments
+device_id,st_entrance,st_entry_time,line_type,line_name,vehicle_dep_time,vehicle_dep_stop,vehicle_arr_time, vehicle_arr_stop,st_exit_location,st_exit_time ,comments
 1,,"2016-08-26 09:02:00",BUS,154,"2016-08-26 09:07:00",Niittyrinne,"2016-08-26 09:23:00",Ruoholahti (Länsiväylä),,,
 1,Ruoholahti A,"2016-08-26 09:25:00",SUBWAY,V,"2016-08-26 09:31:00",Ruoholahti(M),"2016-08-26 09:35:00",Helsingin Yliopisto(M),HY B (Vilhonkatu),"2016-08-26 09:38:00",
 1,,,TRAM,3,"2016-08-26 09:41:00",Kaisaniemenpuisto,"2016-08-26 09:44:00",Hakaniemi,,,
