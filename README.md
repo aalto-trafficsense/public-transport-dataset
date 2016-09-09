@@ -1,17 +1,32 @@
 # public-transport-dataset
 
-This dataset is composed of position and activity recognition samples
+The dataset is composed of position and activity recognition samples
 of 8 researchers between 9 am and 4 pm EET+DST on August 26th 2016,
-manual bookkeeping of their trips and related transport infrastructure data. Data collection for the limited period was pre-agreed with every campaign participant. The target was to create a dataset for testing and benchmarking of algorithms for automatic recognition of public transportation trips from mobile phone sample data. Seven participants executed as many public transportation trips as possible during the designated time, especially emphasizing travel by subway, as it has been the most challenging transportation mode for automatic recognition. Some private car trips were also logged to provide trips, which should not match with any public transportation. Due to the exceptional amount of travel during one day, this dataset cannot be used as a source for studying regular travel habits of public transportation users.
+manual bookkeeping of their trips and related transport infrastructure
+data. Data collection for the limited period was pre-agreed with every
+campaign participant. The target was to create a dataset for testing
+and benchmarking of algorithms for automatic recognition of public
+transportation trips from mobile phone sample data. Seven participants
+executed as many public transportation trips as possible during the
+designated time, especially emphasizing travel by subway, as it has
+been the most challenging transportation mode for automatic
+recognition. Some private car trips were also logged to provide trips,
+which should not match with any public transportation. Due to the
+exceptional amount of travel during one day, this dataset cannot be
+used as a source for studying regular travel habits of public
+transportation users.
+
+The challenge is to correctly recognise as many trips
+from the manual log as possible by using the other forms of data available.
 
 The dataset consists of the following components:
 * [Device data](#device-data) (samples from mobile phones)
 * [Filtered device data](#device-data-filtered) (samples from mobile phones)
-* Device models (phones used by the participants)
-* Manual log (manual trip bookkeeping entries of participants)
-* Public transport fleet live position samples
-* Static timetables valid at the time of the experiment
-* Train history from the experiment date
+* [Device models](#device-models) (phones used by the participants)
+* [Manual log](#manual-log) (manual trip bookkeeping entries of participants)
+* [Live position samples](#transit-live) of the public transport fleet
+* [Static timetables](#static timetables) valid at the time of the experiment
+* [Train history](#train history information) from the experiment date
 
 CSV-versions of the data are available in the [csv folder](https://github.com/aalto-trafficsense/public-transport-dataset/tree/master/csv). The [psql
 folder](https://github.com/aalto-trafficsense/public-transport-dataset/tree/master/psql) contains instructions and scripts to import the data into a
@@ -21,7 +36,7 @@ PostgreSQL database.
 
 Mobile client samples were collected using the [TrafficSense android client](https://play.google.com/store/apps/details?id=fi.aalto.trafficsense.trafficsense). The client program uses the fused location provider and activity recognition from Google play services. The following fields were collected into the dataset:
   1. time (timestamp without timezone)
-  1. device_id (integer, stable identifier for the device, used also for manual bookkeeping)
+  1. device_id (integer, stable identifier for the device)
   1. lat (double, latitude)
   1. lng (double, longitude)
   1. accuracy (double, radius)
@@ -61,6 +76,8 @@ up from SLEEP state. It has also been observed in rail traffic that
 sometimes the ride is so smooth that the client goes to SLEEP state
 during travel.
 
+### Sampling parameters
+
 In addition to SLEEP-state explained above, these parameters were used
 by the client:
 * Location update request interval and max rate 10s (in ACTIVE)
@@ -69,6 +86,13 @@ varies up to 180 seconds for power saving reasons)
 
 An average of 30% of the maximum number of points (one
 point every 10 seconds from each terminal) has been uploaded.
+
+### Positioning inaccuracies
+
+The mobile client uses the [Android fused location provider](https://developers.google.com/android/reference/com/google/android/gms/location/FusedLocationProviderApi), which
+combines data from satellite, WLAN and cellular positioning. Despite that, sometimes there can be problematic positioning
+fixes, which should be taken care of by filtering. One example is
+shown [here](https://github.com/aalto-trafficsense/public-transport-dataset/blob/master/doc/example-positioning-problem.png).
 
 ## device-data-filtered
 
@@ -83,17 +107,17 @@ filtering solution is developed.
 
 The following fields are included:
   1. time (timestamp without timezone)
-  1. device_id (same as in `device_data`)
+  1. device_id (integer, same as in `device_data`)
   1. lat (double, latitude)
   1. lng (double, longitude)
   1. activity (enum value of the decided activity)
 
 The table contains 5975 points. The CSV-version is sorted by time and device_id.
 
-## terminal-models
+## device-models
 
 Lists the type string for the mobile phone used in the test. Included, as there are some differences in e.g. activity recognition performance between different devices. Contains the following columns:
-  1. terminal (integer number of the terminal)
+  1. device_id (integer, same as in `device_data`)
   1. model (string name of the model)
 
 The table length is 8 rows.
@@ -101,7 +125,7 @@ The table length is 8 rows.
 ## manual-log
 
 The manual bookkeeping of the test persons on the trips made. Contains the following columns per trip leg:
-  1. device_id (integer number of the terminal)
+  1. device_id (integer, same as in [device_data](#device-data))
   1. st_entrance (string description of entrance to station building, if applicable)
   1. st_entry_time (timestamp (no tz) of entering station, if applicable)
   1. line_type (string SUBWAY / BUS / TRAM / TRAIN / CAR)
@@ -122,7 +146,10 @@ A series of positions of the
 [Helsinki Regional Transport](https://www.hsl.fi/en) fleet obtained by
 sampling http://dev.hsl.fi/siriaccess/vm/json every 30 seconds,
 restricting the timeperiod to the time of the trial and geoboxing the area
-around the coordinates sampled from the test participants. 
+[around the coordinates](https://github.com/aalto-trafficsense/public-transport-dataset/blob/master/doc/transit-data-bounding-box.png) sampled from the test participants. 
+
+_Note: No trains and not all buses are included in the live data!! One
+of the challenges of the exercise._
 
 The following columns are included:
   1. time (timestamp without timezone)
@@ -134,6 +161,15 @@ The following columns are included:
      vehicles in traffic at the same time)
 
 The table length is 229451 entries.
+
+## static timetables
+
+The static timetables from HRT are not included in the repository, but they are available through this link:
+[http://dev.hsl.fi/gtfs/hsl_20160825T125101Z.zip](http://dev.hsl.fi/gtfs/hsl_20160825T125101Z.zip).
+
+The
+[format is specified by Google](https://developers.google.com/transit/gtfs/). It
+can be used e.g. with [OpenTripPlanner](http://www.opentripplanner.org/). 
 
 ## train history information
 
@@ -150,13 +186,4 @@ The description of the stations "Liikennepaikat" format is available (in Finnish
 http://rata.digitraffic.fi/api/v1/doc/index.html#Liikennepaikkavastaus
 
 The train data is licensed under the [Creative Commons BY 4.0 licence](http://creativecommons.org/licenses/by/4.0/) from [Digitraffic](http://www.liikennevirasto.fi/web/en/open-data/services/digitraffic#.V9BlOxB96Ho) offered by the [Finnish Traffic Agency](http://www.liikennevirasto.fi/web/en).
-
-## static timetables
-
-The static timetables from HRT are not included in the repository, but they are available through this link:
-[http://dev.hsl.fi/gtfs/hsl_20160825T125101Z.zip](http://dev.hsl.fi/gtfs/hsl_20160825T125101Z.zip).
-
-The
-[format is specified by Google](https://developers.google.com/transit/gtfs/). It
-can be used e.g. with [OpenTripPlanner](http://www.opentripplanner.org/). 
 
