@@ -172,7 +172,8 @@ Travelled line_names not found in transit-live are:
 * Trains: E, I, K, P, U
 * Buses: Espoo18, 95, 102T, 103T, 105, 110, 132T, 154, 156
 
-In terms of trips, the following (10) bus trips are therefore not in transit-live:
+In terms of trips, the following (10) bus trips are therefore
+definitely not in transit-live:
 
     id| dep-time | line_name
     1 | 09:07:00 | 154
@@ -186,9 +187,100 @@ In terms of trips, the following (10) bus trips are therefore not in transit-liv
     3 | 15:26:39 | 102T
     1 | 15:59:00 | 156
 
-The following trips are in transit live, as they have been found there
+The following 29 trips are in transit live, as they have been found there
 with our matching algorithm:
 
+     dev | lgd_start| logged_type |       logged_name       |recd_start|  activity  | recognised_type | recognised_name 
+    -----+----------+-------------+-------------------------+----------+------------+-----------------+-------------
+       1 | 09:41:00 | TRAM        | 3                       | 09:40:58 | IN_VEHICLE | TRAM            | 3
+       1 | 10:06:00 | TRAM        | 7A                      | 10:15:37 | IN_VEHICLE | TRAM            | 7A
+       1 | 10:46:00 | SUBWAY      | V                       | 10:43:41 | IN_VEHICLE | SUBWAY          | V
+       1 | 11:01:00 | SUBWAY      |                         | 11:01:12 | IN_VEHICLE | SUBWAY          | V
+       1 | 11:15:00 | SUBWAY      | M                       | 11:16:07 | IN_VEHICLE | SUBWAY          | M
+       1 | 13:14:00 | SUBWAY      |                         | 13:13:31 | IN_VEHICLE | SUBWAY          | V
+       1 | 14:18:00 | SUBWAY      |                         | 14:17:32 | IN_VEHICLE | SUBWAY          | V
+       1 | 14:38:00 | SUBWAY      |                         | 14:39:54 | IN_VEHICLE | SUBWAY          | V
+       1 | 14:57:00 | SUBWAY      |                         | 14:56:47 | IN_VEHICLE | SUBWAY          | V
+       1 | 15:36:00 | SUBWAY      |                         | 15:36:27 | IN_VEHICLE | SUBWAY          | M
+       2 | 13:14:34 | SUBWAY      | To west                 | 13:14:01 | IN_VEHICLE | SUBWAY          | V
+       3 | 10:59:27 | SUBWAY      | To east                 | 10:59:43 | IN_VEHICLE | SUBWAY          | V
+       3 | 11:27:06 | SUBWAY      | To west                 | 11:28:05 | IN_VEHICLE | SUBWAY          | V
+       3 | 13:14:14 | SUBWAY      | To west                 | 13:15:14 | IN_VEHICLE | SUBWAY          | V
+       4 | 09:39:00 | TRAM        | 9                       | 09:43:08 | IN_VEHICLE | TRAM            | 1
+       4 | 10:17:00 | TRAM        | 7A                      | 10:14:27 | IN_VEHICLE | TRAM            | 7A
+       4 | 10:47:00 | SUBWAY      | to east (to Vuosaari)   | 10:45:59 | IN_VEHICLE | SUBWAY          | V
+       4 | 13:21:50 | SUBWAY      | to west                 | 13:21:20 | IN_VEHICLE | SUBWAY          | V
+       4 | 13:44:00 | SUBWAY      | to west                 | 13:45:12 | IN_VEHICLE | SUBWAY          | V
+       4 | 14:28:00 | TRAM        | 9                       | 14:26:04 | IN_VEHICLE | TRAM            | 9
+       5 | 10:52:00 | BUS         | 16                      | 10:52:30 | IN_VEHICLE | BUS             | 16
+       5 | 14:40:00 | SUBWAY      | R                       | 14:40:46 | IN_VEHICLE | SUBWAY          | V
+       5 | 15:10:00 | TRAM        | 9                       | 15:08:38 | IN_VEHICLE | TRAM            | 9
+       6 | 14:01:00 | BUS         | 560                     | 13:59:21 | IN_VEHICLE | BUS             | 560
+       8 | 10:18:00 | TRAM        | 9                       | 10:17:00 | IN_VEHICLE | TRAM            | 9
+       8 | 10:44:00 | TRAM        | 9                       | 10:44:22 | IN_VEHICLE | TRAM            | 9
+       8 | 11:08:00 | BUS         | 72                      | 11:07:46 | IN_VEHICLE | BUS             | 72
+       8 | 11:25:00 | SUBWAY      |                         | 11:26:23 | IN_VEHICLE | SUBWAY          | M
+       8 | 13:49:00 | BUS         | 550                     | 13:48:41 | IN_VEHICLE | BUS             | 550
+
+These 19 trips have an overlapping IN_VEHICLE segment (and therefore should be recognisable if the vehicle exists in live):
+
+     device_id |lgd_start | logged_type |       logged_name       |recd_start|  activity  | recognised_type | recognised_name 
+    -----------+----------+-------------+-------------------------+----------+------------+-----------------+-----------------
+             1 | 09:31:00 | SUBWAY      | V                       | 09:31:44 | IN_VEHICLE |                 | 
+             1 | 09:48:00 | SUBWAY      |                         | 09:49:19 | IN_VEHICLE |                 | 
+             1 | 13:43:00 | TRAM        | 9                       | 13:46:54 | IN_VEHICLE |                 | 
+             1 | 15:24:00 | SUBWAY      |                         | 15:24:38 | IN_VEHICLE |                 | 
+             2 | 11:04:00 | SUBWAY      | To east                 | 11:04:13 | IN_VEHICLE |                 | 
+             3 | 11:56:11 | SUBWAY      | To west                 | 11:57:56 | IN_VEHICLE |                 | 
+             3 | 13:45:37 | SUBWAY      | To west                 | 13:45:42 | IN_VEHICLE |                 | 
+             4 | 10:35:00 | SUBWAY      | to east (to Mellunmäki) | 10:14:27 | IN_VEHICLE | TRAM            | 7A
+             4 | 11:04:00 | SUBWAY      | to east (to Mellunmäki) | 11:04:55 | IN_VEHICLE |                 | 
+             4 | 11:36:00 | SUBWAY      | to east                 | 11:36:32 | IN_VEHICLE |                 | 
+             4 | 15:15:00 | SUBWAY      | to east                 | 15:15:29 | IN_VEHICLE |                 | 
+             5 | 09:58:00 | TRAM        | 7A                      | 09:58:03 | IN_VEHICLE |                 | 
+             5 | 11:18:00 | BUS         | 67                      | 11:18:23 | IN_VEHICLE |                 | 
+             5 | 11:38:00 | SUBWAY      | M                       | 11:38:53 | IN_VEHICLE |                 | 
+             5 | 15:36:00 | TRAM        | 9                       | 15:37:43 | IN_VEHICLE |                 | 
+             6 | 11:38:00 | SUBWAY      |                         | 11:45:26 | IN_VEHICLE |                 | 
+             6 | 14:19:00 | SUBWAY      |                         | 13:59:21 | IN_VEHICLE | BUS             | 560
+             6 | 15:50:00 | TRAM        | 9                       | 15:50:58 | IN_VEHICLE |                 | 
+             8 | 11:52:00 | SUBWAY      |                         | 11:52:35 | IN_VEHICLE |                 | 
+
+Finally, these 29 trips have no overlapping IN_VEHICLE segment and
+would need another approach for recognition, e.g. through subway
+station locations:
+
+     device_id |lgd_start | logged_type | logged_name 
+    -----------+----------+-------------+-------------
+             1 | 10:28:00 | SUBWAY      |         
+             1 | 11:56:00 | SUBWAY      |         
+             1 | 13:58:00 | SUBWAY      |         
+             2 | 11:26:18 | SUBWAY      | To east 
+             2 | 11:50:44 | SUBWAY      | To west 
+             3 | 10:21:21 | SUBWAY      | To east 
+             3 | 10:37:47 | SUBWAY      | To east 
+             3 | 13:35:13 | TRAM        | 7A      
+             3 | 14:07:59 | SUBWAY      | To west 
+             3 | 14:11:30 | SUBWAY      | To west 
+             3 | 14:42:40 | SUBWAY      | To east 
+             3 | 15:02:03 | SUBWAY      | To west 
+             4 | 11:26:00 | SUBWAY      | to west 
+             4 | 11:45:00 | SUBWAY      | to east 
+             4 | 13:57:00 | SUBWAY      | to west 
+             4 | 15:53:00 | SUBWAY      | to west 
+             5 | 10:12:00 | SUBWAY      | M       
+             5 | 11:11:00 | SUBWAY      | R       
+             5 | 11:30:00 | SUBWAY      | R       
+             5 | 13:22:00 | SUBWAY      | M       
+             5 | 13:34:00 | SUBWAY      | R       
+             5 | 13:54:00 | SUBWAY      | V       
+             5 | 14:20:00 | SUBWAY      | R       
+             5 | 15:51:00 | TRAM        | 8       
+             5 | 15:56:00 | SUBWAY      | M       
+             6 | 13:47:00 | SUBWAY      |         
+             6 | 14:29:00 | SUBWAY      |         
+             6 | 15:02:00 | SUBWAY      |         
+             6 | 15:41:00 | TRAM        | 2       
 
 
 ## static timetables
