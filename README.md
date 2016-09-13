@@ -164,20 +164,15 @@ _Note: No trains and not all buses are included in the live data!! One
 of the challenges of the exercise._
 
 Travelled line_names found in transit-live are:
-* Trams: 2, 3, 7A, 8, 9 (manual-log lists 8e, but it is the same tram)
+* Trams: 2, 3, 7A, 8, 9
 * Buses: 16, 67, 72, 550, 560
-* Subways
-
-_Note2: The fact that instances of these lines are found in live-data
-does not yet guarantee that a particular vehicle was
-transmitting. This text should be updated once the status of each trip
-is verified._
+* Subways (line_name in manual-log varies and cannot be used)
 
 Travelled line_names not found in transit-live are:
 * Trains: E, I, K, P, U
-* Buses: 18 (Espoo), 95, 102T, 103T, 105, 110, 132T, 154, 156
+* Buses: Espoo18, 95, 102T, 103T, 105, 110, 132T, 154, 156
 
-In terms of trips, the following (10) bus trips are not in transit-live:
+In terms of trips, the following (10) bus trips are therefore not in transit-live:
 
     id| dep-time | line_name
     1 | 09:07:00 | 154
@@ -190,6 +185,10 @@ In terms of trips, the following (10) bus trips are not in transit-live:
     3 | 14:21:08 | 105
     3 | 15:26:39 | 102T
     1 | 15:59:00 | 156
+
+The following trips are in transit live, as they have been found there
+with our matching algorithm:
+
 
 
 ## static timetables
