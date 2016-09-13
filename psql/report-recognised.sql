@@ -173,7 +173,7 @@ FROM (SELECT DISTINCT ON (rt.id) rt.id AS id,ml.vehicle_dep_time AS log_dep_time
         :rec_trips rt, manual_log ml
       WHERE
         rt.device_id=ml.device_id AND
-        rt.line_type IS NOT NULL AND
+	ml.line_type = rt.line_type AND
 	ml.line_type = 'TRAM' AND
         (rt.time_start,rt.time_end) OVERLAPS (ml.vehicle_dep_time,ml.vehicle_arr_time)
       ) AS subQuery	
