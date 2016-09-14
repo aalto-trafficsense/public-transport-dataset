@@ -9,7 +9,7 @@ device_id,st_entrance,st_entry_time,line_type,line_name,vehicle_dep_time,vehicle
 1,Siilitie,"2016-08-26 10:41:00",SUBWAY,V,"2016-08-26 10:46:00",Siilitie(M),"2016-08-26 10:52:00",Rastila(M),Rikisilta,"2016-08-26 10:53:00",
 1,Rastila,"2016-08-26 10:58:00",SUBWAY,,"2016-08-26 11:01:00",Rastila(M),"2016-08-26 11:06:00",Itäkeskus(M),,,Transfer
 1,,,SUBWAY,M,"2016-08-26 11:15:00",Itäkeskus(M),"2016-08-26 11:19:00",Kontula(M),Emännänpolku,"2016-08-26 11:20:00",
-1,Emännänpolku,"2016-08-26 10:39:00",SUBWAY,M,"2016-08-26 11:47:00",Kontula(M),"2016-08-26 11:45:00",Mellunmäki(M),Mellunmäki B (Korvatunturintie),"2016-08-26 11:45:00",
+1,Emännänpolku,"2016-08-26 11:39:00",SUBWAY,M,"2016-08-26 11:42:00",Kontula(M),"2016-08-26 11:43:00",Mellunmäki(M),Mellunmäki B (Korvatunturintie),"2016-08-26 11:45:00",
 1,Mellunmäki B (Korvatunturintie),"2016-08-26 11:53:00",SUBWAY,,"2016-08-26 11:56:00",Mellunmäki(M),"2016-08-26 12:01:00",Itäkeskus(M),Itäkeskus C (Tallinnanaukio),"2016-08-26 12:02:00",
 1,Itäkeskus C (Tallinnanaukio),"2016-08-26 13:13:00",SUBWAY,,"2016-08-26 13:14:00",Itäkeskus(M),"2016-08-26 13:30:00",Kamppi(M),"Kamppi C, (Freda)","2016-08-26 13:34:00",
 1,,,TRAM,9,"2016-08-26 13:43:00",Kampintori,"2016-08-26 13:52:00",Kaisaniemenkatu,,,
