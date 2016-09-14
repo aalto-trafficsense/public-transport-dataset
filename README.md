@@ -1,7 +1,7 @@
 # public-transport-dataset
 
 The dataset is composed of position and activity recognition samples
-of 8 researchers between 9 am and 4 pm EET+DST on August 26th 2016,
+of 8 researchers from the [TrafficSense project](https://aaltotrafficsense.wordpress.com/) between 9 am and 4 pm EET+DST on August 26th 2016,
 manual bookkeeping of their trips and related transport infrastructure
 data. Data collection for the limited period was pre-agreed with every
 campaign participant. The target was to create a dataset for testing
@@ -11,19 +11,20 @@ executed as many public transportation trips as possible during the
 designated time, especially emphasizing travel by subway, as it has
 been the most challenging transportation mode for automatic
 recognition. Some private car trips were also logged to provide trips,
-which should not match with any public transportation. Due to the
-exceptional amount of travel during one day, this dataset cannot be
+which should not match with any public transportation.
+
+Due to the exceptional amount of travel during one day, this dataset cannot be
 used as a source for studying regular travel habits of public
 transportation users.
 
 The challenge is to correctly recognise as many trips
-from the manual log as possible by using the other forms of data available.
+listed in the manual log as possible by using the other forms of data available.
 
 The dataset consists of the following components:
 * [Device data](#device-data) (samples from mobile phones)
 * [Filtered device data](#device-data-filtered) (activity and movement
   filtered)
-* [Device models](#device-models) (phones used by the participants)
+* [Device models](#device-models) (phone models used by the participants)
 * [Manual log](#manual-log) (manual trip bookkeeping entries of participants)
 * [Live position samples](#transit-live) of the public transport fleet
 * [Static timetables](#static timetables) valid at the time of the experiment
@@ -31,11 +32,13 @@ The dataset consists of the following components:
 
 CSV-versions of the data are available in the [csv folder](https://github.com/aalto-trafficsense/public-transport-dataset/tree/master/csv). The [psql
 folder](https://github.com/aalto-trafficsense/public-transport-dataset/tree/master/psql) contains instructions and scripts to import the data into a
-PostgreSQL database.
+PostgreSQL database and produce reports and comparison tables between
+the manual log and recognised trips. Output from three sample methods
+is included for testing.
 
 ## device-data
 
-Mobile client samples were collected using the [TrafficSense android client](https://play.google.com/store/apps/details?id=fi.aalto.trafficsense.trafficsense). The client program uses the fused location provider and activity recognition from Google play services. The following fields were collected into the dataset:
+Mobile client samples were collected using the [TrafficSense android client](https://play.google.com/store/apps/details?id=fi.aalto.trafficsense.trafficsense). The client program uses the fused location provider and activity recognition from [Google Play Services](https://developers.google.com/android/guides/overview). The following fields were collected into the dataset:
   1. time (timestamp without timezone)
   1. device_id (integer, stable identifier for the device)
   1. lat (double, latitude)
@@ -56,9 +59,8 @@ The enum values for the activities are: IN_VEHICLE, ON_BICYCLE, ON_FOOT, RUNNING
 
 The client transfers between ACTIVE and SLEEP states with the following criteria:
 
-ACTIVE ----40 seconds STILL only----> SLEEP
-
-ACTIVE <-------not STILL------------- SLEEP
+    ACTIVE ----40 seconds STILL only----> SLEEP
+           <-------not STILL-------------
 
 If received position changes (more than the accuracy of the fix) during the STILL period, the timer is restarted from 40 seconds.
 
@@ -68,9 +70,9 @@ The received position fixes are filtered as follows:
 * Accuracy needs to be better than 1000m
 * If activity != last queued activity and activity is good (not
   unknown or tilting), point is accepted
-* If activity == last queued activity and distance to last queued activity > accuracy, point is accepted
+* If activity == last queued activity and distance to last accepted point > accuracy, point is accepted
 
-Activity is always requested with 10 second interval, but as a form of power saving, during STILL situations activity recognition interval has been observed to raise up to 180 seconds. Each queued position is complemented with the latest activity information. The timestamp of the entry is the timestamp of the position, not of the activity. The same reported activity may repeat over multiple points.
+Activity is always requested with 10 second interval, but as a form of power saving, during STILL situations activity recognition interval has been observed to increase up to 180 seconds. Each queued position is complemented with the latest activity information. The timestamp of the entry is the timestamp of the position, not of the activity. The same reported activity may repeat over multiple points.
 
 As a result, sometimes the client may need up to ~200 seconds to wake
 up from SLEEP state. It has also been observed in rail traffic that
@@ -85,8 +87,9 @@ by the client:
 * Activity recognition reporting interval 10s (request, in practice
 varies up to 180 seconds for power saving reasons)
 
-An average of 30% of the maximum number of points (one
-point every 10 seconds from each terminal) has been uploaded.
+An average of 30% out of the theoretical maximum number of points
+(which would be one
+point every 10 seconds from each terminal) has been included.
 
 ### Positioning inaccuracies
 
@@ -103,8 +106,9 @@ shown [here](https://github.com/aalto-trafficsense/public-transport-dataset/blob
 
 `device_data_filtered` is included in the set, because some recognition
 algorithms use it. A candidate solution is welcome to use the more
-complete device-data instead, especially if a better activity
-filtering solution is developed.
+complete device-data instead. The activity filtering has a clear
+impact on recognition results, as can be seen by the data shown under
+[transit live](#transit-live).
 
 The following fields are included:
   1. time (timestamp without timezone)
@@ -155,13 +159,13 @@ The following columns are included:
   1. lng (double, longitude)
   1. line_type (string SUBWAY / BUS / TRAM / TRAIN / CAR)
   1. line_name (string identifier, e.g. 7A, 102T, U, V)
-  1. vehicle_ref (string to distinguish between different line_name
+  1. vehicle_ref (string, distinguish between different line_name
      vehicles in traffic at the same time)
 
 The table length is 229451 entries.
 
 _Note: No trains and not all buses are included in the live data!! One
-of the challenges of the exercise._
+of the challenges of the exercise!_
 
 Travelled line_names found in transit-live are:
 * Trams: 2, 3, 7A, 8, 9
@@ -187,8 +191,8 @@ definitely not in transit-live:
     3 | 15:26:39 | 102T
     1 | 15:59:00 | 156
 
-The following 28 trips are in transit live, as they have been found there
-with our matching algorithm (logged trips matching multiple segments
+The following 28 trips are in transit live, as they have been found
+with our algorithm (logged trips matching multiple segments
 have multiple rows):
 
     dev_id | log_start | log_end  | logged_type | log_name| id  | segm_start | segm_end |  activity  | recd_type | recd_name 
@@ -279,7 +283,7 @@ matching multiple segments are listed multiple times):
 
 Finally, these 13 trips have no overlapping IN_VEHICLE segment:
 
-    dev_id | log_start | log_end  | logged_type | log_name| id  | segm_start | segm_end |  activity
+    dev_id | log_start | log_end  | logged_type | log_name| id  | segm_start | segm_end | activity
     -------+-----------+----------+-------------+---------+-----+------------+----------+----------
          4 | 15:53:00  | 15:55:00 | SUBWAY      | to west | 127 | 15:41:39   | 15:58:40 | WALKING
          5 | 11:30:00  | 11:31:00 | SUBWAY      | R       | 141 | 11:21:26   | 11:36:31 | WALKING
@@ -296,8 +300,8 @@ Finally, these 13 trips have no overlapping IN_VEHICLE segment:
          6 | 15:41:00  | 15:43:00 | TRAM        | 2       | 164 | 15:27:41   | 15:50:48 | WALKING
 
 Note also that:
-* 3/13 trips (2 subway + 1 tram) have no corresponding data at all
-* 10/13 trips matched by walking (in 6/10 cases shadowing the whole trip)
+* 3/13 trips (2 subway + 1 tram) have no overlapping data at all
+* 10/13 trips overlap with WALKING (in 6/10 cases shadowing the whole trip)
 
 ## static timetables
 
@@ -310,13 +314,16 @@ can be used e.g. with [OpenTripPlanner](http://www.opentripplanner.org/).
 
 ## train history information
 
-JSON-format information in the [trains-json folder](https://github.com/aalto-trafficsense/public-transport-dataset/tree/master/trains-json) fetched from:
+JSON-format information in the
+[trains-json folder](https://github.com/aalto-trafficsense/public-transport-dataset/tree/master/trains-json)
+is fetched from:
 http://rata.digitraffic.fi/api/v1/history?departure_date=2016-08-26
 
-The returned JSON-file is a "junat" object, as described (in Finnish) at:
+The returned JSON-file is a "junat" object, including the stopping
+times of trains at each station as described (in Finnish) at:
 http://rata.digitraffic.fi/api/v1/doc/index.html#Junavastaus
 
-The train data references stations, which are obtained as:
+Information on the referenced stations, including their locations, are obtained as:
 http://rata.digitraffic.fi/api/v1/metadata/stations
 
 The description of the stations "Liikennepaikat" format is available (in Finnish) at:

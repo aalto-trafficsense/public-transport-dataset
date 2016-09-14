@@ -20,7 +20,7 @@ If not already installed, install
    work on most flavors of *nix, not on Windows). The script
    creates the directory, initiates the database and starts the
    postgresql server. Leave the server running, it can be closed later with
-   CTRL-C. When you need to run it again, use `postgres -D pttestdb`, where `pttestdb` is the path to the directory with your database.
+   CTRL-C. When you need to run it again, use `postgres -D <path-to-new-database-dir>`.
 1. Switch to another terminal window.
 1. Run the init script on psql: `psql -U postgres -f
    create-db-from-csv.sql`. (If you need to re-import the data to an
@@ -62,14 +62,14 @@ report-recognised.sql`.
    the recognised trips is produced by `postgres=# \i
    compare-recognised.sql`. This comparison is over-inclusive in
    showing all the log-entry recognised-segment pairs, which overlap
-   by more than 60 seconds, but that has been useful for diagnostics.
+   by more than 60 seconds, but that has been found useful for diagnostics.
 
 ## Recognised_trips table format
 
 The reporting and comparison scripts described above can be used over
 the results of any newly implemented recognition method, as long as
-the output format is the same. Table name `recognised_trips` and
-format:
+the output format is the same. The assumed table name is
+`recognised_trips` with the following format:
 
        Column   |            Type             |                           Modifiers                           
     ------------+-----------------------------+---------------------------------------------------------------
@@ -85,5 +85,5 @@ format:
         "idx_recognised_trips_device_id_time" btree (device_id, time_start)
         "idx_recognised_trips_time" btree (time_start)
 
-The setup commands to initialise the table can be found in the `import-recognised.sql` script.
+The setup commands to initialise an empty table can be found in the `import-recognised.sql` script.
 
