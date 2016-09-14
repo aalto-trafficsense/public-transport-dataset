@@ -191,109 +191,109 @@ The following 28 trips are in transit live, as they have been found there
 with our matching algorithm (logged trips matching multiple segments
 have multiple rows):
 
-    dev_id | log_start | log_end  | logged_type |       logged_name       | id  | segment_start | segment_end |  activity  | recd_type | recd_name 
-    -------+-----------+----------+-------------+-------------------------+-----+---------------+-------------+------------+-----------+-----------
-         1 | 09:41:00  | 09:44:00 | TRAM        | 3                       |   6 | 09:40:58      | 09:44:59    | IN_VEHICLE | TRAM      | 3
-         1 | 10:06:00  | 10:19:00 | TRAM        | 7A                      |  12 | 10:07:24      | 10:13:23    | IN_VEHICLE | TRAM      | 7A
-         1 | 10:06:00  | 10:19:00 | TRAM        | 7A                      |  13 | 10:13:34      | 10:14:56    | ON_BICYCLE |           | 
-         1 | 10:06:00  | 10:19:00 | TRAM        | 7A                      |  14 | 10:15:37      | 10:20:11    | IN_VEHICLE | TRAM      | 7A
-         1 | 10:46:00  | 10:52:00 | SUBWAY      | V                       |  19 | 10:43:41      | 10:52:45    | IN_VEHICLE | SUBWAY    | V
-         1 | 11:01:00  | 11:06:00 | SUBWAY      |                         |  21 | 11:01:12      | 11:09:28    | IN_VEHICLE | SUBWAY    | V
-         1 | 11:15:00  | 11:19:00 | SUBWAY      | M                       |  22 | 11:16:07      | 11:20:23    | IN_VEHICLE | SUBWAY    | M
-         1 | 13:14:00  | 13:30:00 | SUBWAY      |                         |  29 | 13:13:31      | 13:30:27    | IN_VEHICLE | SUBWAY    | V
-         1 | 14:18:00  | 14:30:00 | SUBWAY      |                         |  34 | 14:17:32      | 14:22:30    | IN_VEHICLE | SUBWAY    | V
-         1 | 14:18:00  | 14:30:00 | SUBWAY      |                         |  35 | 14:22:41      | 14:26:37    | ON_BICYCLE |           | 
-         1 | 14:18:00  | 14:30:00 | SUBWAY      |                         |  36 | 14:27:18      | 14:31:15    | IN_VEHICLE | SUBWAY    | V
-         1 | 14:38:00  | 14:51:00 | SUBWAY      |                         |  37 | 14:31:25      | 14:39:23    | WALKING    |           | 
-         1 | 14:38:00  | 14:51:00 | SUBWAY      |                         |  38 | 14:39:54      | 14:51:15    | IN_VEHICLE | SUBWAY    | V
-         1 | 14:57:00  | 15:05:00 | SUBWAY      |                         |  40 | 14:56:47      | 15:06:45    | IN_VEHICLE | SUBWAY    | V
-         1 | 15:36:00  | 15:55:00 | SUBWAY      |                         |  44 | 15:36:27      | 15:42:17    | IN_VEHICLE | SUBWAY    | M
-         1 | 15:36:00  | 15:55:00 | SUBWAY      |                         |  45 | 15:42:27      | 15:48:05    | ON_BICYCLE |           | 
-         1 | 15:36:00  | 15:55:00 | SUBWAY      |                         |  46 | 15:50:21      | 16:18:46    | IN_VEHICLE |           | 
-         2 | 13:14:34  | 13:30:03 | SUBWAY      | To west                 |  54 | 13:14:01      | 13:31:34    | IN_VEHICLE | SUBWAY    | V
-         3 | 10:59:27  | 11:10:08 | SUBWAY      | To east                 |  74 | 10:59:43      | 11:09:46    | IN_VEHICLE | SUBWAY    | V
-         3 | 11:27:06  | 11:34:11 | SUBWAY      | To west                 |  76 | 11:28:05      | 11:34:36    | IN_VEHICLE | SUBWAY    | V
-         3 | 13:14:14  | 13:24:28 | SUBWAY      | To west                 |  81 | 13:15:14      | 13:23:37    | IN_VEHICLE | SUBWAY    | V
-         4 | 10:17:00  | 10:28:00 | TRAM        | 7A                      | 105 | 10:14:27      | 10:38:15    | IN_VEHICLE | TRAM      | 7A
-         4 | 10:47:00  | 10:53:00 | SUBWAY      | to east (to Vuosaari)   | 107 | 10:45:59      | 10:53:39    | IN_VEHICLE | SUBWAY    | V
-         4 | 13:21:50  | 13:31:00 | SUBWAY      | to west                 | 116 | 13:21:20      | 13:31:57    | IN_VEHICLE | SUBWAY    | V
-         4 | 13:44:00  | 13:47:00 | SUBWAY      | to west                 | 118 | 13:45:12      | 13:47:30    | IN_VEHICLE | SUBWAY    | V
-         4 | 14:28:00  | 14:31:00 | TRAM        | 9                       | 122 | 14:26:04      | 14:31:10    | IN_VEHICLE | TRAM      | 9
-         5 | 10:52:00  | 11:02:00 | BUS         | 16                      | 136 | 10:52:30      | 11:03:28    | IN_VEHICLE | BUS       | 16
-         5 | 14:40:00  | 14:50:00 | SUBWAY      | R                       | 149 | 14:40:46      | 14:50:51    | IN_VEHICLE | SUBWAY    | V
-         5 | 15:10:00  | 15:20:00 | TRAM        | 9                       | 151 | 15:08:38      | 15:24:01    | IN_VEHICLE | TRAM      | 9
-         6 | 14:01:00  | 14:17:00 | BUS         | 560                     | 162 | 13:59:21      | 14:25:50    | IN_VEHICLE | BUS       | 560
-         8 | 10:18:00  | 10:23:00 | TRAM        | 9                       | 174 | 10:17:00      | 10:23:55    | IN_VEHICLE | TRAM      | 9
-         8 | 10:44:00  | 10:53:00 | TRAM        | 9                       | 178 | 10:44:22      | 10:54:44    | IN_VEHICLE | TRAM      | 9
-         8 | 11:08:00  | 11:13:00 | BUS         | 72                      | 180 | 11:07:46      | 11:14:48    | IN_VEHICLE | BUS       | 72
-         8 | 11:25:00  | 11:41:00 | SUBWAY      |                         | 181 | 11:26:23      | 11:42:24    | IN_VEHICLE | SUBWAY    | M
-         8 | 13:49:00  | 14:04:00 | BUS         | 550                     | 187 | 13:48:41      | 14:04:30    | IN_VEHICLE | BUS       | 550
+    dev_id | log_start | log_end  | logged_type | log_name| id  | segm_start | segm_end |  activity  | recd_type | recd_name 
+    -------+-----------+----------+-------------+---------+-----+------------+----------+------------+-----------+-----------
+         1 | 09:41:00  | 09:44:00 | TRAM        | 3       |   6 | 09:40:58   | 09:44:59 | IN_VEHICLE | TRAM      | 3
+         1 | 10:06:00  | 10:19:00 | TRAM        | 7A      |  12 | 10:07:24   | 10:13:23 | IN_VEHICLE | TRAM      | 7A
+         1 | 10:06:00  | 10:19:00 | TRAM        | 7A      |  13 | 10:13:34   | 10:14:56 | ON_BICYCLE |           | 
+         1 | 10:06:00  | 10:19:00 | TRAM        | 7A      |  14 | 10:15:37   | 10:20:11 | IN_VEHICLE | TRAM      | 7A
+         1 | 10:46:00  | 10:52:00 | SUBWAY      | V       |  19 | 10:43:41   | 10:52:45 | IN_VEHICLE | SUBWAY    | V
+         1 | 11:01:00  | 11:06:00 | SUBWAY      |         |  21 | 11:01:12   | 11:09:28 | IN_VEHICLE | SUBWAY    | V
+         1 | 11:15:00  | 11:19:00 | SUBWAY      | M       |  22 | 11:16:07   | 11:20:23 | IN_VEHICLE | SUBWAY    | M
+         1 | 13:14:00  | 13:30:00 | SUBWAY      |         |  29 | 13:13:31   | 13:30:27 | IN_VEHICLE | SUBWAY    | V
+         1 | 14:18:00  | 14:30:00 | SUBWAY      |         |  34 | 14:17:32   | 14:22:30 | IN_VEHICLE | SUBWAY    | V
+         1 | 14:18:00  | 14:30:00 | SUBWAY      |         |  35 | 14:22:41   | 14:26:37 | ON_BICYCLE |           | 
+         1 | 14:18:00  | 14:30:00 | SUBWAY      |         |  36 | 14:27:18   | 14:31:15 | IN_VEHICLE | SUBWAY    | V
+         1 | 14:38:00  | 14:51:00 | SUBWAY      |         |  37 | 14:31:25   | 14:39:23 | WALKING    |           | 
+         1 | 14:38:00  | 14:51:00 | SUBWAY      |         |  38 | 14:39:54   | 14:51:15 | IN_VEHICLE | SUBWAY    | V
+         1 | 14:57:00  | 15:05:00 | SUBWAY      |         |  40 | 14:56:47   | 15:06:45 | IN_VEHICLE | SUBWAY    | V
+         1 | 15:36:00  | 15:55:00 | SUBWAY      |         |  44 | 15:36:27   | 15:42:17 | IN_VEHICLE | SUBWAY    | M
+         1 | 15:36:00  | 15:55:00 | SUBWAY      |         |  45 | 15:42:27   | 15:48:05 | ON_BICYCLE |           | 
+         1 | 15:36:00  | 15:55:00 | SUBWAY      |         |  46 | 15:50:21   | 16:18:46 | IN_VEHICLE |           | 
+         2 | 13:14:34  | 13:30:03 | SUBWAY      | To west |  54 | 13:14:01   | 13:31:34 | IN_VEHICLE | SUBWAY    | V
+         3 | 10:59:27  | 11:10:08 | SUBWAY      | To east |  74 | 10:59:43   | 11:09:46 | IN_VEHICLE | SUBWAY    | V
+         3 | 11:27:06  | 11:34:11 | SUBWAY      | To west |  76 | 11:28:05   | 11:34:36 | IN_VEHICLE | SUBWAY    | V
+         3 | 13:14:14  | 13:24:28 | SUBWAY      | To west |  81 | 13:15:14   | 13:23:37 | IN_VEHICLE | SUBWAY    | V
+         4 | 10:17:00  | 10:28:00 | TRAM        | 7A      | 105 | 10:14:27   | 10:38:15 | IN_VEHICLE | TRAM      | 7A
+         4 | 10:47:00  | 10:53:00 | SUBWAY      | to east | 107 | 10:45:59   | 10:53:39 | IN_VEHICLE | SUBWAY    | V
+         4 | 13:21:50  | 13:31:00 | SUBWAY      | to west | 116 | 13:21:20   | 13:31:57 | IN_VEHICLE | SUBWAY    | V
+         4 | 13:44:00  | 13:47:00 | SUBWAY      | to west | 118 | 13:45:12   | 13:47:30 | IN_VEHICLE | SUBWAY    | V
+         4 | 14:28:00  | 14:31:00 | TRAM        | 9       | 122 | 14:26:04   | 14:31:10 | IN_VEHICLE | TRAM      | 9
+         5 | 10:52:00  | 11:02:00 | BUS         | 16      | 136 | 10:52:30   | 11:03:28 | IN_VEHICLE | BUS       | 16
+         5 | 14:40:00  | 14:50:00 | SUBWAY      | R       | 149 | 14:40:46   | 14:50:51 | IN_VEHICLE | SUBWAY    | V
+         5 | 15:10:00  | 15:20:00 | TRAM        | 9       | 151 | 15:08:38   | 15:24:01 | IN_VEHICLE | TRAM      | 9
+         6 | 14:01:00  | 14:17:00 | BUS         | 560     | 162 | 13:59:21   | 14:25:50 | IN_VEHICLE | BUS       | 560
+         8 | 10:18:00  | 10:23:00 | TRAM        | 9       | 174 | 10:17:00   | 10:23:55 | IN_VEHICLE | TRAM      | 9
+         8 | 10:44:00  | 10:53:00 | TRAM        | 9       | 178 | 10:44:22   | 10:54:44 | IN_VEHICLE | TRAM      | 9
+         8 | 11:08:00  | 11:13:00 | BUS         | 72      | 180 | 11:07:46   | 11:14:48 | IN_VEHICLE | BUS       | 72
+         8 | 11:25:00  | 11:41:00 | SUBWAY      |         | 181 | 11:26:23   | 11:42:24 | IN_VEHICLE | SUBWAY    | M
+         8 | 13:49:00  | 14:04:00 | BUS         | 550     | 187 | 13:48:41   | 14:04:30 | IN_VEHICLE | BUS       | 550
 
 These 38 trips have an overlapping IN_VEHICLE segment (and therefore
 should be recognisable if the vehicle exists in live) (logged trips
 matching multiple segments are listed multiple times):
 
-    dev_id | log_start | log_end  | logged_type |       logged_name       | id  | segment_start | segment_end |  activity  | recd_type | recd_name 
-    -------+-----------+----------+-------------+-------------------------+-----+---------------+-------------+------------+-----------+-----------
-         1 | 09:31:00  | 09:35:00 | SUBWAY      | V                       |   4 | 09:31:44      | 09:36:37    | IN_VEHICLE |           | 
-         1 | 09:48:00  | 09:51:00 | SUBWAY      |                         |   8 | 09:49:19      | 09:54:48    | IN_VEHICLE |           | 
-         1 | 10:28:00  | 10:35:00 | SUBWAY      |                         |  17 | 10:28:00      | 10:37:33    | IN_VEHICLE |           | 
-         1 | 11:42:00  | 11:43:00 | SUBWAY      | M                       |  24 | 11:40:36      | 11:46:04    | IN_VEHICLE |           | 
-         1 | 11:56:00  | 12:01:00 | SUBWAY      |                         |  26 | 11:55:14      | 12:02:53    | IN_VEHICLE |           | 
-         1 | 13:43:00  | 13:52:00 | TRAM        | 9                       |  31 | 13:41:40      | 13:46:33    | ON_BICYCLE |           | 
-         1 | 13:43:00  | 13:52:00 | TRAM        | 9                       |  32 | 13:46:54      | 14:05:12    | IN_VEHICLE |           | 
-         1 | 13:58:00  | 14:04:00 | SUBWAY      |                         |  32 | 13:46:54      | 14:05:12    | IN_VEHICLE |           | 
-         1 | 15:24:00  | 15:26:00 | SUBWAY      |                         |  42 | 15:24:38      | 15:28:24    | IN_VEHICLE |           | 
-         2 | 11:04:00  | 11:06:33 | SUBWAY      | To east                 |  50 | 11:04:13      | 11:12:20    | IN_VEHICLE |           | 
-         2 | 11:26:18  | 11:50:00 | SUBWAY      | To east                 |  51 | 11:22:41      | 11:58:31    | IN_VEHICLE |           | 
-         2 | 11:50:44  | 11:58:40 | SUBWAY      | To west                 |  51 | 11:22:41      | 11:58:31    | IN_VEHICLE |           | 
-         3 | 10:21:21  | 10:23:01 | SUBWAY      | To east                 |  70 | 10:17:28      | 10:25:54    | IN_VEHICLE |           | 
-         3 | 10:37:47  | 10:47:59 | SUBWAY      | To east                 |  72 | 10:36:03      | 10:48:14    | IN_VEHICLE |           | 
-         3 | 11:56:11  | 11:58:43 | SUBWAY      | To west                 |  78 | 11:57:56      | 12:01:18    | IN_VEHICLE |           | 
-         3 | 13:35:13  | 13:41:37 | TRAM        | 7A                      |  83 | 13:28:48      | 13:41:28    | IN_VEHICLE |           | 
-         3 | 13:45:37  | 13:47:12 | SUBWAY      | To west                 |  85 | 13:45:42      | 13:48:24    | IN_VEHICLE |           | 
-         3 | 14:07:59  | 14:09:23 | SUBWAY      | To west                 |  87 | 13:59:48      | 14:14:14    | IN_VEHICLE |           | 
-         3 | 14:11:30  | 14:13:34 | SUBWAY      | To west                 |  87 | 13:59:48      | 14:14:14    | IN_VEHICLE |           | 
-         3 | 14:42:40  | 14:52:31 | SUBWAY      | To east                 |  90 | 14:39:47      | 14:52:22    | IN_VEHICLE |           | 
-         3 | 15:02:03  | 15:13:57 | SUBWAY      | To west                 |  92 | 15:01:12      | 15:16:46    | IN_VEHICLE |           | 
-         4 | 09:39:00  | 09:45:00 | TRAM        | 9                       |  97 | 09:38:15      | 09:41:02    | IN_VEHICLE | TRAM      | 3
-         4 | 09:39:00  | 09:45:00 | TRAM        | 9                       |  98 | 09:41:12      | 09:42:25    | ON_BICYCLE |           | 
-         4 | 09:39:00  | 09:45:00 | TRAM        | 9                       |  99 | 09:43:08      | 09:45:15    | IN_VEHICLE | TRAM      | 1
-         4 | 10:35:00  | 10:37:00 | SUBWAY      | to east (to Mellunmäki) | 105 | 10:14:27      | 10:38:15    | IN_VEHICLE | TRAM      | 7A
-         4 | 11:04:00  | 11:13:00 | SUBWAY      | to east (to Mellunmäki) | 109 | 11:04:55      | 11:14:10    | IN_VEHICLE |           | 
-         4 | 11:26:00  | 11:28:00 | SUBWAY      | to west                 | 111 | 11:23:59      | 11:31:36    | IN_VEHICLE |           | 
-         4 | 11:36:00  | 11:38:00 | SUBWAY      | to east                 | 113 | 11:36:32      | 11:46:49    | IN_VEHICLE |           | 
-         4 | 11:45:00  | 11:47:00 | SUBWAY      | to east                 | 113 | 11:36:32      | 11:46:49    | IN_VEHICLE |           | 
-         4 | 13:57:00  | 14:01:00 | SUBWAY      | to west                 | 120 | 13:57:00      | 14:02:39    | IN_VEHICLE |           | 
-         4 | 15:15:00  | 15:20:00 | SUBWAY      | to east                 | 125 | 15:15:29      | 15:20:13    | IN_VEHICLE |           | 
-         5 | 09:58:00  | 10:08:00 | TRAM        | 7A                      | 133 | 09:58:03      | 10:14:13    | IN_VEHICLE |           | 
-         5 | 10:12:00  | 10:13:00 | SUBWAY      | M                       | 133 | 09:58:03      | 10:14:13    | IN_VEHICLE |           | 
-         5 | 11:11:00  | 11:14:00 | SUBWAY      | R                       | 138 | 11:09:19      | 11:14:28    | IN_VEHICLE |           | 
-         5 | 11:18:00  | 11:20:00 | BUS         | 67                      | 140 | 11:18:23      | 11:20:53    | IN_VEHICLE |           | 
-         5 | 11:38:00  | 11:52:00 | SUBWAY      | M                       | 142 | 11:38:53      | 11:50:59    | IN_VEHICLE |           | 
-         5 | 15:36:00  | 15:39:00 | TRAM        | 9                       | 153 | 15:37:43      | 15:40:10    | IN_VEHICLE |           | 
-         6 | 11:38:00  | 11:52:00 | SUBWAY      |                         | 156 | 11:45:26      | 11:50:26    | IN_VEHICLE |           | 
-         6 | 14:19:00  | 14:25:00 | SUBWAY      |                         | 162 | 13:59:21      | 14:25:50    | IN_VEHICLE | BUS       | 560
-         6 | 15:50:00  | 15:59:00 | TRAM        | 9                       | 165 | 15:50:58      | 15:59:24    | IN_VEHICLE |           | 
-         8 | 11:52:00  | 11:58:00 | SUBWAY      |                         | 183 | 11:52:35      | 12:00:18    | IN_VEHICLE |           | 
+    dev_id | log_start | log_end  | logged_type | log_name| id  | segm_start | segm_end |  activity  | recd_type | recd_name 
+    -------+-----------+----------+-------------+---------+-----+------------+----------+------------+-----------+-----------
+         1 | 09:31:00  | 09:35:00 | SUBWAY      | V       |   4 | 09:31:44   | 09:36:37 | IN_VEHICLE |           | 
+         1 | 09:48:00  | 09:51:00 | SUBWAY      |         |   8 | 09:49:19   | 09:54:48 | IN_VEHICLE |           | 
+         1 | 10:28:00  | 10:35:00 | SUBWAY      |         |  17 | 10:28:00   | 10:37:33 | IN_VEHICLE |           | 
+         1 | 11:42:00  | 11:43:00 | SUBWAY      | M       |  24 | 11:40:36   | 11:46:04 | IN_VEHICLE |           | 
+         1 | 11:56:00  | 12:01:00 | SUBWAY      |         |  26 | 11:55:14   | 12:02:53 | IN_VEHICLE |           | 
+         1 | 13:43:00  | 13:52:00 | TRAM        | 9       |  31 | 13:41:40   | 13:46:33 | ON_BICYCLE |           | 
+         1 | 13:43:00  | 13:52:00 | TRAM        | 9       |  32 | 13:46:54   | 14:05:12 | IN_VEHICLE |           | 
+         1 | 13:58:00  | 14:04:00 | SUBWAY      |         |  32 | 13:46:54   | 14:05:12 | IN_VEHICLE |           | 
+         1 | 15:24:00  | 15:26:00 | SUBWAY      |         |  42 | 15:24:38   | 15:28:24 | IN_VEHICLE |           | 
+         2 | 11:04:00  | 11:06:33 | SUBWAY      | To east |  50 | 11:04:13   | 11:12:20 | IN_VEHICLE |           | 
+         2 | 11:26:18  | 11:50:00 | SUBWAY      | To east |  51 | 11:22:41   | 11:58:31 | IN_VEHICLE |           | 
+         2 | 11:50:44  | 11:58:40 | SUBWAY      | To west |  51 | 11:22:41   | 11:58:31 | IN_VEHICLE |           | 
+         3 | 10:21:21  | 10:23:01 | SUBWAY      | To east |  70 | 10:17:28   | 10:25:54 | IN_VEHICLE |           | 
+         3 | 10:37:47  | 10:47:59 | SUBWAY      | To east |  72 | 10:36:03   | 10:48:14 | IN_VEHICLE |           | 
+         3 | 11:56:11  | 11:58:43 | SUBWAY      | To west |  78 | 11:57:56   | 12:01:18 | IN_VEHICLE |           | 
+         3 | 13:35:13  | 13:41:37 | TRAM        | 7A      |  83 | 13:28:48   | 13:41:28 | IN_VEHICLE |           | 
+         3 | 13:45:37  | 13:47:12 | SUBWAY      | To west |  85 | 13:45:42   | 13:48:24 | IN_VEHICLE |           | 
+         3 | 14:07:59  | 14:09:23 | SUBWAY      | To west |  87 | 13:59:48   | 14:14:14 | IN_VEHICLE |           | 
+         3 | 14:11:30  | 14:13:34 | SUBWAY      | To west |  87 | 13:59:48   | 14:14:14 | IN_VEHICLE |           | 
+         3 | 14:42:40  | 14:52:31 | SUBWAY      | To east |  90 | 14:39:47   | 14:52:22 | IN_VEHICLE |           | 
+         3 | 15:02:03  | 15:13:57 | SUBWAY      | To west |  92 | 15:01:12   | 15:16:46 | IN_VEHICLE |           | 
+         4 | 09:39:00  | 09:45:00 | TRAM        | 9       |  97 | 09:38:15   | 09:41:02 | IN_VEHICLE | TRAM      | 3
+         4 | 09:39:00  | 09:45:00 | TRAM        | 9       |  98 | 09:41:12   | 09:42:25 | ON_BICYCLE |           | 
+         4 | 09:39:00  | 09:45:00 | TRAM        | 9       |  99 | 09:43:08   | 09:45:15 | IN_VEHICLE | TRAM      | 1
+         4 | 10:35:00  | 10:37:00 | SUBWAY      | to east | 105 | 10:14:27   | 10:38:15 | IN_VEHICLE | TRAM      | 7A
+         4 | 11:04:00  | 11:13:00 | SUBWAY      | to east | 109 | 11:04:55   | 11:14:10 | IN_VEHICLE |           | 
+         4 | 11:26:00  | 11:28:00 | SUBWAY      | to west | 111 | 11:23:59   | 11:31:36 | IN_VEHICLE |           | 
+         4 | 11:36:00  | 11:38:00 | SUBWAY      | to east | 113 | 11:36:32   | 11:46:49 | IN_VEHICLE |           | 
+         4 | 11:45:00  | 11:47:00 | SUBWAY      | to east | 113 | 11:36:32   | 11:46:49 | IN_VEHICLE |           | 
+         4 | 13:57:00  | 14:01:00 | SUBWAY      | to west | 120 | 13:57:00   | 14:02:39 | IN_VEHICLE |           | 
+         4 | 15:15:00  | 15:20:00 | SUBWAY      | to east | 125 | 15:15:29   | 15:20:13 | IN_VEHICLE |           | 
+         5 | 09:58:00  | 10:08:00 | TRAM        | 7A      | 133 | 09:58:03   | 10:14:13 | IN_VEHICLE |           | 
+         5 | 10:12:00  | 10:13:00 | SUBWAY      | M       | 133 | 09:58:03   | 10:14:13 | IN_VEHICLE |           | 
+         5 | 11:11:00  | 11:14:00 | SUBWAY      | R       | 138 | 11:09:19   | 11:14:28 | IN_VEHICLE |           | 
+         5 | 11:18:00  | 11:20:00 | BUS         | 67      | 140 | 11:18:23   | 11:20:53 | IN_VEHICLE |           | 
+         5 | 11:38:00  | 11:52:00 | SUBWAY      | M       | 142 | 11:38:53   | 11:50:59 | IN_VEHICLE |           | 
+         5 | 15:36:00  | 15:39:00 | TRAM        | 9       | 153 | 15:37:43   | 15:40:10 | IN_VEHICLE |           | 
+         6 | 11:38:00  | 11:52:00 | SUBWAY      |         | 156 | 11:45:26   | 11:50:26 | IN_VEHICLE |           | 
+         6 | 14:19:00  | 14:25:00 | SUBWAY      |         | 162 | 13:59:21   | 14:25:50 | IN_VEHICLE | BUS       | 560
+         6 | 15:50:00  | 15:59:00 | TRAM        | 9       | 165 | 15:50:58   | 15:59:24 | IN_VEHICLE |           | 
+         8 | 11:52:00  | 11:58:00 | SUBWAY      |         | 183 | 11:52:35   | 12:00:18 | IN_VEHICLE |           | 
 
 Finally, these 13 trips have no overlapping IN_VEHICLE segment:
 
-    dev_id | log_start | log_end  | logged_type |       logged_name       | id  | segment_start | segment_end |  activity  | recd_type | recd_name 
-    -------+-----------+----------+-------------+-------------------------+-----+---------------+-------------+------------+-----------+-----------
-         4 | 15:53:00  | 15:55:00 | SUBWAY      | to west                 | 127 | 15:41:39      | 15:58:40    | WALKING    |           | 
-         5 | 11:30:00  | 11:31:00 | SUBWAY      | R                       | 141 | 11:21:26      | 11:36:31    | WALKING    |           | 
-         5 | 13:22:00  | 13:28:00 | SUBWAY      | M                       | 144 | 13:17:08      | 13:23:38    | WALKING    |           | 
-         5 | 13:34:00  | 13:43:00 | SUBWAY      | R                       | 145 | 13:28:54      | 13:37:27    | WALKING    |           | 
-         5 | 13:54:00  | 14:02:00 | SUBWAY      | V                       |     |               |             |            |           | 
-         5 | 14:20:00  | 14:30:00 | SUBWAY      | R                       | 148 | 14:02:42      | 14:39:19    | WALKING    |           | 
-         5 | 15:36:00  | 15:39:00 | TRAM        | 9                       | 152 | 15:34:32      | 15:37:11    | WALKING    |           | 
-         5 | 15:51:00  | 15:52:00 | TRAM        | 8                       |     |               |             |            |           | 
-         5 | 15:56:00  | 15:57:00 | SUBWAY      | M                       |     |               |             |            |           | 
-         6 | 13:47:00  | 13:49:00 | SUBWAY      |                         | 161 | 13:44:23      | 13:57:30    | WALKING    |           | 
-         6 | 14:29:00  | 14:30:00 | SUBWAY      |                         | 163 | 14:26:10      | 15:03:54    | WALKING    |           | 
-         6 | 15:02:00  | 15:20:00 | SUBWAY      |                         | 163 | 14:26:10      | 15:03:54    | WALKING    |           | 
-         6 | 15:41:00  | 15:43:00 | TRAM        | 2                       | 164 | 15:27:41      | 15:50:48    | WALKING    |           | 
+    dev_id | log_start | log_end  | logged_type | log_name| id  | segm_start | segm_end |  activity
+    -------+-----------+----------+-------------+---------+-----+------------+----------+----------
+         4 | 15:53:00  | 15:55:00 | SUBWAY      | to west | 127 | 15:41:39   | 15:58:40 | WALKING
+         5 | 11:30:00  | 11:31:00 | SUBWAY      | R       | 141 | 11:21:26   | 11:36:31 | WALKING
+         5 | 13:22:00  | 13:28:00 | SUBWAY      | M       | 144 | 13:17:08   | 13:23:38 | WALKING
+         5 | 13:34:00  | 13:43:00 | SUBWAY      | R       | 145 | 13:28:54   | 13:37:27 | WALKING
+         5 | 13:54:00  | 14:02:00 | SUBWAY      | V       |     |            |          |        
+         5 | 14:20:00  | 14:30:00 | SUBWAY      | R       | 148 | 14:02:42   | 14:39:19 | WALKING
+         5 | 15:36:00  | 15:39:00 | TRAM        | 9       | 152 | 15:34:32   | 15:37:11 | WALKING
+         5 | 15:51:00  | 15:52:00 | TRAM        | 8       |     |            |          |        
+         5 | 15:56:00  | 15:57:00 | SUBWAY      | M       |     |            |          |        
+         6 | 13:47:00  | 13:49:00 | SUBWAY      |         | 161 | 13:44:23   | 13:57:30 | WALKING
+         6 | 14:29:00  | 14:30:00 | SUBWAY      |         | 163 | 14:26:10   | 15:03:54 | WALKING
+         6 | 15:02:00  | 15:20:00 | SUBWAY      |         | 163 | 14:26:10   | 15:03:54 | WALKING
+         6 | 15:41:00  | 15:43:00 | TRAM        | 2       | 164 | 15:27:41   | 15:50:48 | WALKING
 
 Note also that:
 * 3/13 trips (2 subway + 1 tram) have no corresponding data at all
