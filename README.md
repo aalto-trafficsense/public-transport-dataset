@@ -131,7 +131,8 @@ The table length is 8 rows.
 
 The manual bookkeeping of the test persons on the trips made. Contains the following columns per trip leg:
   1. device_id (integer, same as in [device_data](#device-data))
-  1. st_entrance (string description of entrance to station building, if applicable)
+  1. st_entrance (string description of entrance to station building,
+     if applicable. Subway entrance letters [here](https://github.com/aalto-trafficsense/public-transport-dataset/blob/master/doc/subway-station-entrance-maps.pdf).)
   1. st_entry_time (timestamp (no tz) of entering station, if applicable)
   1. line_type (string SUBWAY / BUS / TRAM / TRAIN / CAR)
   1. line_name (string identifier, e.g. 7A, 102T, U, V)
@@ -139,7 +140,8 @@ The manual bookkeeping of the test persons on the trips made. Contains the follo
   1. vehicle_dep_stop (string description of the platform or other station where vehicle was boarded)
   1. vehicle_arr_time (timestamp (no tz) of vehicle stop at trip end)
   1. vehicle_arr_stop (string description of the platform or other station where the vehicle was exited)
-  1. st_exit_location (string description of exit to station building, if applicable)
+  1. st_exit_location (string description of exit to station building,
+     if applicable. Subway exit letters [here](https://github.com/aalto-trafficsense/public-transport-dataset/blob/master/doc/subway-station-entrance-maps.pdf).)
   1. st_exit_time (timestamp (no tz) of exiting station, if applicable)
   1. comments (string freeform comments about the trip leg)
 
